@@ -2,17 +2,23 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 import Header from '../Header';
+import Home from '../Home'
+import Teacher from '../Teacher'
 import Footer from '../Footer';
 import NotFound from '../NotFound';
 
-function Home(props) {
-  return (
-    <div>Hello!</div>);
-};
+function HomePage() {
+  return <Home teachers={this.props.teachers} />;
+}
+
+function TeacherPage(props) {
+  return <Teacher teacher={this.props.teachers[props.match.params.id]} />;
+}
 
 class Navigation extends Component {
 
   render () {
+
     return (
       <Router>
         <div className="content">
@@ -24,7 +30,8 @@ class Navigation extends Component {
           <main className="container">
             <Header />
             <Switch>
-              <Route exact path="/" render={Home.bind(this)} />
+              <Route exact path="/" render={HomePage.bind(this)} />
+              <Route path="/teachers/:id" render={TeacherPage.bind(this)} />
               <Route path="*" component={NotFound} />
             </Switch>
           </main>
@@ -32,6 +39,10 @@ class Navigation extends Component {
         </div>
       </Router>
     );
+  }
+
+  getTeacher(id) {
+
   }
 
 };

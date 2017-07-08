@@ -1,22 +1,49 @@
+html, body {
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 nav {
   background-color: black;
+  flex: 0 0 auto;
 }
 
 nav > ul {
   list-style: none;
+  margin: 0;
 }
 
 nav > ul > li {
   display: inline-block;
-  margin: 1rem 3rem;
+  margin: 0;
 }
 
 nav > ul > li a {
+  display: block;
+  padding: 1rem 3rem;
   text-decoration: none;
 }
 
-.main {
-  margin: 0 3rem;
+nav > ul > li a:hover, nav > ul > li a:focus {
+  background-color: #33c3f0;
+  color:black;
+}
+
+section#main {
+  height: 100%;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.signup {
+  background-color: #33c3f0;
 }
 
 .container > header {
@@ -28,13 +55,8 @@ nav > ul > li a {
   padding-right: 2rem;
 }
 
-.content {
-  min-height: 100%;
-  margin-bottom: -2rem;
-}
-
 section > div > footer {
-  margin-top: -2rem;
+  flex: 0 0 auto;
   background-color: black;
   color: white;
   padding: 1rem;
@@ -78,5 +100,28 @@ section > div > footer {
   } 50% {
     transform: scale(1.0);
     -webkit-transform: scale(1.0);
+  }
+}
+
+/* Bigger than 550 */
+@media (min-width: 550px) {
+  .section {
+    padding: 12rem 0 11rem;
+  }
+}
+
+/* Bigger than 750 */
+@media (min-width: 750px) {
+  .section {
+    padding: 14rem 0 15rem;
+  }
+  .categories {
+    padding: 15rem 0 8rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .section {
+    padding: 20rem 0 19rem;
   }
 }
