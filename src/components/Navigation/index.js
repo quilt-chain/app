@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import Header from '../Header';
 import Home from '../Home'
 import Teacher from '../Teacher'
+import Rating from '../Rating'
 import Footer from '../Footer';
 import NotFound from '../NotFound';
 
@@ -13,6 +14,10 @@ function HomePage() {
 
 function TeacherPage(props) {
   return <Teacher teacher={this.props.teachers[props.match.params.id]} />;
+}
+
+function RatingPage(props) {
+  return <Rating teacher={this.props.teachers[props.match.params.id]} setRating={this.props.setRating} />;
 }
 
 class Navigation extends Component {
@@ -31,6 +36,7 @@ class Navigation extends Component {
             <Header />
             <Switch>
               <Route exact path="/" render={HomePage.bind(this)} />
+              <Route path="/teachers/:id/rating" render={RatingPage.bind(this)} />
               <Route path="/teachers/:id" render={TeacherPage.bind(this)} />
               <Route path="*" component={NotFound} />
             </Switch>

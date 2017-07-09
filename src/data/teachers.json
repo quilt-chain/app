@@ -3,18 +3,18 @@
     "id": "t1",
     "subjects": ["maths", "science"],
     "price": 20,
-    "rating": "5"
+    "rating": 0
   },
   "t2": {
     "id": "t2",
     "subjects": ["english languate", "english literature"],
     "price": 10,
-    "rating": "3"
+    "rating": 0
   },
   "t3": {
     "id": "t3",
     "subjects": ["physics"],
     "price": 3,
-    "rating": "0"
+    "rating": 0
   }
 }

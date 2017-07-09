@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Teacher extends Component {
 
@@ -14,7 +15,7 @@ class Teacher extends Component {
   available() {
     return (<div>
         <h3>Available</h3>
-        <button className="signup">Sign up for class!</button>
+        <Link className="signup button" to={`/teachers/${this.props.teacher.id}/rating`}>Sign up for class!</Link>
       </div>);
   }
 
